@@ -29,20 +29,10 @@ variable "containerPort" {
 
 variable "imagemDocker" {
   type    = string
-  default = "389812301415.dkr.ecr.us-east-1.amazonaws.com/fiap56-repository:latest"
+  default = "fiap56soat1/fasteats-api:latest"
 }
 
 variable "containerName" {
   type    = string
   default = "fasteats"
-}
-
-variable "aws_access_key" {
-  type    = string
-  default = "value"
-}
-
-variable "aws_secret_key" {
-  type    = string
-  default = "value"
 }
