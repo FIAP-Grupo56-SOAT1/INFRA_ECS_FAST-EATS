@@ -39,10 +39,10 @@ variable "containerName" {
 
 variable "aws_access_key" {
   type    = string
-  default = "AKIAVVQU7VZTWI25RZPA"
+  default = "value"
 }
 
 variable "aws_secret_key" {
   type    = string
-  default = "e59BpZZBu7qd+iB/N4ZHgjjBdsCHzBfIcD3Tp7X9"
+  default = "value"
 }
