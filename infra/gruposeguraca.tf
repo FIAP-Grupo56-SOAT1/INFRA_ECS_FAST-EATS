@@ -30,7 +30,6 @@ resource "aws_security_group" "privado" {
   vpc_id = module.vpc.vpc_id
 }
 
-
 resource "aws_security_group_rule" "entrada_ECS" {
   type      = "ingress"
   from_port = 0
@@ -49,8 +48,6 @@ resource "aws_security_group_rule" "saida_ECS" {
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.privado.id
 }
-
-
 
 #CONFIGURAÇÃO DO BANCO DE DADOS MYSQL
 

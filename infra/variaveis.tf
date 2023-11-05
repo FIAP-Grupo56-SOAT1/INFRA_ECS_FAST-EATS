@@ -27,8 +27,6 @@ variable "containerPort" {
   default = 8080
 }
 
-
-
 variable "containerName" {
   type    = string
   default = "DB_SERVER"
@@ -60,11 +58,9 @@ variable "containerDbPassword" {
   type = string
 }
 
-
 variable "containerDbRootPassword" {
   type = string
 }
-
 
 variable "containerMercadoPagoEmailEmpresa" {
   type = string
@@ -79,7 +75,6 @@ variable "containerMercadoPagoCredential" {
 variable "containerMercadoPagoUderId" {
   type = string
 }
-
 
 variable "containerMercadoPagoTipoPagamento" {
   type = string
