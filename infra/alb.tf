@@ -17,7 +17,6 @@ resource "aws_lb_listener" "http" {
   }
 }
 
-
 resource "aws_lb_target_group" "alvo" {
   name        = "ECS-SPRING-TEST"
   port        = var.portaAplicacao

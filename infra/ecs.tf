@@ -19,7 +19,6 @@ module "ecs" {
   }
 }
 
-
 resource "aws_ecs_task_definition" "SPRING-TEST-API" {
   family                   = "SPRING-TEST-TASK"
   requires_compatibilities = ["FARGATE"]
@@ -65,7 +64,6 @@ resource "aws_ecs_task_definition" "SPRING-TEST-API" {
       }
   ])
 }
-
 
 resource "aws_ecs_service" "SPRING-TEST-API" {
   name            = "SPRING-TEST-API"
