@@ -1,0 +1,11 @@
+name: main-pipeline
+
+on:
+  pull_request:
+    branches: ['main']
+    types: ['closed']
+
+jobs:
+  terraform:
+    uses: ./.github/workflows/terraform.yml
+    secrets: inherit
