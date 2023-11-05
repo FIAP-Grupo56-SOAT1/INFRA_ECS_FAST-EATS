@@ -20,8 +20,8 @@ module "ecs" {
 }
 
 
-resource "aws_ecs_task_definition" "DOTNET-TEST-API" {
-  family                   = "DOTNET-TEST-TASK"
+resource "aws_ecs_task_definition" "SPRING-TEST-API" {
+  family                   = "SPRING-TEST-TASK"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = 1024
@@ -37,23 +37,23 @@ resource "aws_ecs_task_definition" "DOTNET-TEST-API" {
         "environment" = [
           {
             "NAME" : "DB_SERVER",
-            "value" : "fasteats-database.c6lkuclqp8pp.us-east-1.rds.amazonaws.com"
+            "value" : "${var.containerDbServer}"
           },
-          { "NAME" : "DB_PORT", "value" : "3306" },
-          { "NAME" : "DB_NAME", "value" : "fasteatsdb" },
-          { "NAME" : "DB_USER", "value" : "fiap56" },
-          { "NAME" : "DB_PASSWORD", "value" : "fiapsoat1grupo56" },
-          { "NAME" : "DB_ROOT_PASSWORD", "value" : "fiapsoat1grupo56" },
+          { "NAME" : "DB_PORT", "value" : "${var.containerDbPort}" },
+          { "NAME" : "DB_NAME", "value" : "${var.containerDbName}" },
+          { "NAME" : "DB_USER", "value" : "${var.containerDbUser}" },
+          { "NAME" : "DB_PASSWORD", "value" : "${var.containerDbPassword}" },
+          { "NAME" : "DB_ROOT_PASSWORD", "value" : "${var.containerDbRootPassword}" },
           {
             "NAME" : "MERCADO_PAGO_EMAIL_EMPRESA",
-            "value" : "pagamento@lanchonete-fiap.com.br"
+            "value" : "${var.containerMercadoPagoEmailEmpresa}"
           },
           {
             "NAME" : "MERCADO_PAGO_CREDENCIAL",
-            "value" : "TEST-2087963774082813-080820-ee2b9b80edbdecf3ea8453bb8c088bc7-64946408"
+            "value" : "${var.containerMercadoPagoCredential}"
           },
-          { "NAME" : "MERCADO_PAGO_USERID", "value" : "64946408" },
-          { "NAME" : "MERCADO_PAGO_TIPO_PAGAMENTO", "value" : "pix" }
+          { "NAME" : "MERCADO_PAGO_USERID", "value" : "${var.containerMercadoPagoUderId}" },
+          { "NAME" : "MERCADO_PAGO_TIPO_PAGAMENTO", "value" : "${var.containerMercadoPagoTipoPagamento}" }
         ]
         "essential" = true
         "portMappings" = [
@@ -67,10 +67,10 @@ resource "aws_ecs_task_definition" "DOTNET-TEST-API" {
 }
 
 
-resource "aws_ecs_service" "DOTNET-TEST-API" {
-  name            = "DOTNET-TEST-API"
+resource "aws_ecs_service" "SPRING-TEST-API" {
+  name            = "SPRING-TEST-API"
   cluster         = module.ecs.cluster_id
-  task_definition = aws_ecs_task_definition.DOTNET-TEST-API.arn
+  task_definition = aws_ecs_task_definition.SPRING-TEST-API.arn
   desired_count   = 3
 
   load_balancer {
