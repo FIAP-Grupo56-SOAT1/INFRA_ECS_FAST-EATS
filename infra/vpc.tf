@@ -1,3 +1,6 @@
+
+# Criando a VPC - dentro do VPN temos as regios e dentro das regios temos as zonas de disponibilidade (AZs)
+# e depois temos as sub-redes (subnets), temos as subnets publicas e privadas 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 

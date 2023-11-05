@@ -1,3 +1,5 @@
+# Arquivo responsável por criar o cluster ECS e o serviço ECS
+
 module "ecs" {
   source       = "terraform-aws-modules/ecs/aws"
   cluster_name = var.ambiente
@@ -18,6 +20,7 @@ module "ecs" {
     }
   }
 }
+
 
 resource "aws_ecs_task_definition" "SPRING-TEST-API" {
   family                   = "SPRING-TEST-TASK"

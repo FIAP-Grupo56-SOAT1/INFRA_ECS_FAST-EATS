@@ -1,3 +1,5 @@
+
+# Criando um modulo que utiliza os dados do infra para criação do ambiente
 module "prod" {
   source                  = "../../infra"
   containerDbName         = jsondecode(data.aws_secretsmanager_secret_version.mysql_credentials.secret_string)["dbname"]
