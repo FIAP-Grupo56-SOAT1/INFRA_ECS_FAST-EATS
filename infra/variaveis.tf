@@ -40,8 +40,7 @@ variable "imagemDocker" {
 }
 
 variable "containerDbServer" {
-  type    = string
-  default = "fasteats-database.c6lkuclqp8pp.us-east-1.rds.amazonaws.com"
+  type = string
 }
 
 variable "containerDbPort" {
@@ -50,46 +49,38 @@ variable "containerDbPort" {
 }
 
 variable "containerDbName" {
-  type    = string
-  default = "fasteatsdb"
+  type = string
 }
 
 variable "containerDbUser" {
-  type    = string
-  default = "fiap56"
+  type = string
 }
 
 variable "containerDbPassword" {
-  type    = string
-  default = "fiapsoat1grupo56"
+  type = string
 }
 
 
 variable "containerDbRootPassword" {
-  type    = string
-  default = "fiapsoat1grupo56"
+  type = string
 }
 
 
 variable "containerMercadoPagoEmailEmpresa" {
-  type    = string
-  default = "pagamento@lanchonete-fiap.com.br"
+  type = string
 }
 
 
 variable "containerMercadoPagoCredential" {
-  type    = string
-  default = "TEST-2087963774082813-080820-ee2b9b80edbdecf3ea8453bb8c088bc7-64946408"
+  type = string
 }
 
 
 variable "containerMercadoPagoUderId" {
-  type    = string
-  default = "64946408"
+  type = string
 }
 
 
 variable "containerMercadoPagoTipoPagamento" {
-  type    = string
-  default = "pix"
+  type = string
 }
