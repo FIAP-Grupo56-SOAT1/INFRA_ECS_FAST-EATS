@@ -63,19 +63,23 @@ variable "containerDbRootPassword" {
 }
 
 variable "containerMercadoPagoEmailEmpresa" {
-  type = string
+  type    = string
+  default = "pagamento@lanchonete-fiap.com.br"
 }
 
 
 variable "containerMercadoPagoCredential" {
-  type = string
+  type    = string
+  default = "TEST-2087963774082813-080820-ee2b9b80edbdecf3ea8453bb8c088bc7-64946408"
 }
 
 
 variable "containerMercadoPagoUderId" {
-  type = string
+  type    = string
+  default = "64946408"
 }
 
 variable "containerMercadoPagoTipoPagamento" {
-  type = string
+  type    = string
+  default = "pix"
 }
