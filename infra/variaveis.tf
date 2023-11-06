@@ -29,7 +29,7 @@ variable "containerPort" {
 
 variable "containerName" {
   type    = string
-  default = "DB_SERVER"
+  default = "fasteats"
 }
 
 variable "imagemDocker" {
