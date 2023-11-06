@@ -1,7 +1,7 @@
 #configuração do load balance
 
 resource "aws_lb" "alb" {
-  name            = "ECS-SPRING-TEST"
+  name            = "ECS-FASTEATS"
   security_groups = [aws_security_group.alb.id]
   subnets         = module.vpc.public_subnets
 }
@@ -18,7 +18,7 @@ resource "aws_lb_listener" "http" {
 }
 
 resource "aws_lb_target_group" "alvo" {
-  name        = "ECS-SPRING-TEST"
+  name        = "ECS-FASTEATS"
   port        = var.portaAplicacao
   protocol    = "HTTP"
   target_type = "ip"

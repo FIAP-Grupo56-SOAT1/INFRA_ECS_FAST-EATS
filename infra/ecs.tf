@@ -22,8 +22,8 @@ module "ecs" {
 }
 
 
-resource "aws_ecs_task_definition" "SPRING-TEST-API" {
-  family                   = "SPRING-TEST-TASK"
+resource "aws_ecs_task_definition" "FASTEATS-API" {
+  family                   = "FASTEATS-TASK"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = 1024
@@ -68,10 +68,10 @@ resource "aws_ecs_task_definition" "SPRING-TEST-API" {
   ])
 }
 
-resource "aws_ecs_service" "SPRING-TEST-API" {
-  name            = "SPRING-TEST-API"
+resource "aws_ecs_service" "FASTEATS-API" {
+  name            = "FASTEATS-API"
   cluster         = module.ecs.cluster_id
-  task_definition = aws_ecs_task_definition.SPRING-TEST-API.arn
+  task_definition = aws_ecs_task_definition.FASTEATS-API.arn
   desired_count   = 3
 
   load_balancer {
