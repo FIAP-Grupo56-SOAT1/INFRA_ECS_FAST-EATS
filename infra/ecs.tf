@@ -72,7 +72,7 @@ resource "aws_ecs_service" "FASTEATS-API" {
   name            = "FASTEATS-API"
   cluster         = module.ecs.cluster_id
   task_definition = aws_ecs_task_definition.FASTEATS-API.arn
-  desired_count   = 3
+  desired_count   = 1
 
   load_balancer {
     target_group_arn = aws_lb_target_group.alvo.arn
