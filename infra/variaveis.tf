@@ -34,7 +34,7 @@ variable "containerName" {
 
 variable "imagemDocker" {
   type    = string
-  default = "fiap56soat1/fasteats-api:latest"
+  default = "fiap56soat1/fasteats-ms-pedido-api:latest"
 }
 
 variable "containerDbServer" {
