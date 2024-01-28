@@ -83,3 +83,13 @@ variable "containerMercadoPagoTipoPagamento" {
   type    = string
   default = "pix"
 }
+
+variable "URL_PAGAMENTO_SERVICE" {
+  type    = string
+  default = "http://localhost:8081"
+}
+
+variable "URL_COZINHA_PEDIDO_SERVICE" {
+  type    = string
+  default = "http://localhost:8082"
+}
