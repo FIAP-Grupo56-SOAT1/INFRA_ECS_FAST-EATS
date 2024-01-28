@@ -55,8 +55,8 @@ resource "aws_ecs_task_definition" "FASTEATS-API" {
             "value" : "${var.containerMercadoPagoCredential}"
           },
           { "NAME" : "MERCADO_PAGO_USERID", "value" : "${var.containerMercadoPagoUderId}" },
-          { "NAME" : "MERCADO_PAGO_TIPO_PAGAMENTO", "value" : "${var.containerMercadoPagoTipoPagamento}" }
-          { "NAME" : "URL_PAGAMENTO_SERVICE", "value" : "${var.URL_PAGAMENTO_SERVICE}" }
+          { "NAME" : "MERCADO_PAGO_TIPO_PAGAMENTO", "value" : "${var.containerMercadoPagoTipoPagamento}" },
+          { "NAME" : "URL_PAGAMENTO_SERVICE", "value" : "${var.URL_PAGAMENTO_SERVICE}" },
           { "NAME" : "URL_COZINHA_PEDIDO_SERVICE", "value" : "${var.URL_COZINHA_PEDIDO_SERVICE}" }
         ]
         "essential" = true
