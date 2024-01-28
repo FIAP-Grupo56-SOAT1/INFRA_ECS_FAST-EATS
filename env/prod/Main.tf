@@ -7,7 +7,7 @@ module "prod" {
   containerDbPassword     = jsondecode(data.aws_secretsmanager_secret_version.mysql_credentials.secret_string)["password"]
   containerDbRootPassword = jsondecode(data.aws_secretsmanager_secret_version.mysql_credentials.secret_string)["password"]
   containerDbServer       = jsondecode(data.aws_secretsmanager_secret_version.mysql_credentials.secret_string)["host"]
-  containerDbPort         = jsondecode(data.aws_secretsmanager_secret_version.mysql_credentials.secret_string)["port"]
+  containerDbPort         = jsondecode(data.aws_secretsmanager_secret_version.mysql_credentials.secret_string)["port"]  
 }
 
 
