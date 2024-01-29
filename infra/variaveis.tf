@@ -86,7 +86,7 @@ variable "containerMercadoPagoTipoPagamento" {
 
 variable "URL_PAGAMENTO_SERVICE" {
   type    = string
-  default = "http://ecs-fasteats-api-pagamento-2026512882.us-east-1.elb.amazonaws.com:8080"
+  default = "http://ecs-fasteats-api-pagamento-399390289.us-west-2.elb.amazonaws.com:8080"
 }
 
 variable "URL_COZINHA_PEDIDO_SERVICE" {
