@@ -68,17 +68,17 @@ resource "aws_ecs_task_definition" "fasteats" {
           }
         }
       }
-  ])
+    ])
   requires_compatibilities = ["FARGATE"]                              # use Fargate as the launch type
   network_mode             = "awsvpc"                                 # add the AWS VPN network mode as this is required for Fargate
   memory                   = var.memory_container                     # Specify the memory the container requires
   cpu                      = var.cpu_container                        # Specify the CPU the container requires
   execution_role_arn       = var.execution_role_ecs                   #aws_iam_role.ecsTaskExecutionRole.arn
 
- tags = {
-   Name = random_string.lower.result
-   type = "terraform"
- }
+  tags = {
+    Name = random_string.lower.result
+    type = "terraform"
+  }
 }
 
 
