@@ -29,6 +29,7 @@ module "prod" {
   containerDbRootPassword = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["password"]
   containerDbServer       = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["host"]
   containerDbPort         = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["port"]
+  portaAplicacao          = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["app_port"]
   url_pagamento_service   = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["url_pagamento_service"]
   url_cozinha_service     = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["url_cozinha_service"]
 }
