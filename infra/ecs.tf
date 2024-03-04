@@ -38,7 +38,7 @@ resource "aws_ecs_task_definition" "fasteats" {
           { "NAME" : "DB_USERNAME", "value" : var.containerDbUser },
           { "NAME" : "DB_PASSWORD", "value" : var.containerDbPassword },
           { "NAME" : "DB_NAME", "value" : var.containerDbName },
-          { "NAME" : "DB_HOST", "value" : var.containerDbServer },
+          { "NAME" : "DB_SERVER", "value" : var.containerDbServer },
           { "NAME" : "URL_PAGAMENTO_SERVICE", "value" : var.url_pagamento_service },
           { "NAME" : "URL_COZINHA_PEDIDO_SERVICE", "value" : var.url_cozinha_service },
           {
