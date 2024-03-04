@@ -190,7 +190,7 @@ resource "aws_ecs_service" "app_service_fasteats" {
       aws_default_subnet.default_subnet_b.id,
       #aws_default_subnet.default_subnet_c.id
     ]
-    assign_public_ip = false                                                  # Provide the containers with public IPs
+    assign_public_ip = true                                                  # Provide the containers with public IPs
     security_groups  = [
       aws_security_group.service_security_group_fasteats.id,
       aws_security_group.service_ecs_security_group_db_fasteats.id
