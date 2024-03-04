@@ -93,11 +93,11 @@ resource "aws_default_subnet" "default_subnet_a" {
   availability_zone = "us-east-1a"
 }
 
-#resource "aws_default_subnet" "default_subnet_b" {
-#  # Use your own region here but reference to subnet 1b
-#  availability_zone = "us-east-1b"
-#}
-#
+resource "aws_default_subnet" "default_subnet_b" {
+  # Use your own region here but reference to subnet 1b
+  availability_zone = "us-east-1b"
+}
+
 #resource "aws_default_subnet" "default_subnet_c" {
 #  # Use your own region here but reference to subnet 1b
 #  availability_zone = "us-east-1c"
@@ -110,7 +110,7 @@ resource "aws_alb" "application_load_balancer_fasteats" {
   load_balancer_type = "application"
   subnets = [ # Referencing the default subnets
     aws_default_subnet.default_subnet_a.id,
-    #aws_default_subnet.default_subnet_b.id,
+    aws_default_subnet.default_subnet_b.id,
     #aws_default_subnet.default_subnet_c.id
   ]
   # security group
@@ -187,7 +187,7 @@ resource "aws_ecs_service" "app_service_fasteats" {
   network_configuration {
     subnets = [
       aws_default_subnet.default_subnet_a.id,
-      #aws_default_subnet.default_subnet_b.id,
+      aws_default_subnet.default_subnet_b.id,
       #aws_default_subnet.default_subnet_c.id
     ]
     assign_public_ip = false                                                  # Provide the containers with public IPs
