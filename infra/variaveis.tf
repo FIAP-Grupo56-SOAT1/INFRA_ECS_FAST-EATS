@@ -32,7 +32,7 @@ variable "regiao" {
 
 variable "portaAplicacao" {
   type    = number
-  default = 8082
+  default = 8080
 }
 
 variable "containerDbPort" {
