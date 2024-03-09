@@ -1,20 +1,20 @@
 variable "micro_servico" {
   description = "Nome do microserviço"
-  type    = string
-  default = "pedido"
+  type        = string
+  default     = "pedido"
 }
 
 ##### variaveis de ambiente repositorio de imagens docker#######
 variable "nome_repositorio" {
   description = "Nome do repositório de imagens Docker"
-  type    = string
-  default = "microservico-pedido"
+  type        = string
+  default     = "microservico-pedido"
 }
 
 variable "repositorio_url" {
   description = "URL do repositório de imagens Docker do microserviço"
-  type = string
-  default = "730335661438.dkr.ecr.us-east-1.amazonaws.com/microservico-pedido"
+  type        = string
+  default     = "730335661438.dkr.ecr.us-east-1.amazonaws.com/microservico-pedido"
 }
 
 variable "imagemDocker" {
@@ -37,33 +37,33 @@ variable "portaAplicacao" {
 
 variable "containerDbPort" {
   description = "Porta do banco de dados do microserviço"
-  type    = string
-  default = "3306"
+  type        = string
+  default     = "3306"
 }
 
 variable "containerDbServer" {
   description = "Endereço do banco de dados do microserviço"
-  type    = string
+  type        = string
 }
 
 variable "containerDbName" {
   description = "Nome do banco de dados do microserviço"
-  type    = string
+  type        = string
 }
 
 variable "containerDbUser" {
   description = "Usuário do banco de dados do microserviço"
-  type    = string
+  type        = string
 }
 
 variable "containerDbPassword" {
   description = "Senha do banco de dados do microserviço"
-  type    = string
+  type        = string
 }
 
 variable "containerDbRootPassword" {
   description = "Senha do user root do banco de dados do microserviço"
-  type    = string
+  type        = string
 }
 
 variable "url_pagamento_service" {
