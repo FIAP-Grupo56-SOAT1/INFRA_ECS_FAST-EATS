@@ -32,22 +32,22 @@ module "prod" {
   portaAplicacao                                = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["app_port"]
   url_pagamento_service                         = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["url_pagamento_service"]
   url_cozinha_service                           = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["url_cozinha_service"]
-  AWS_SQS_QUEUE_PEDIDO_CRIADO                   = pedido-criado
-  AWS_SQS_QUEUE_PEDIDO_AGUARDANDO_PAGAMENTO     = pedido-aguardando-pagamento
-  AWS_SQS_QUEUE_PEDIDO_PAGO                     = pedido-pago
-  AWS_SQS_QUEUE_PEDIDO_RECEBIDO                 = pedido-recebido
-  AWS_SQS_QUEUE_PEDIDO_EM_PREPARO               = pedido-em-preparo
-  AWS_SQS_QUEUE_PEDIDO_PRONTO                   = pedido-pronto
-  AWS_SQS_QUEUE_PEDIDO_FINALIZADO               = pedido-finalizado
-  AWS_SQS_QUEUE_PEDIDO_CANCELADO                = pedido-cancelado
-  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_RECEBIDO    = cozinha-erro-pedido-recebido
-  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_EM_PREPARO  = cozinha-erro-pedido-em-preparo
-  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_PRONTO      = cozinha-erro-pedido-pronto
-  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_FINALIZADO  = cozinha-erro-pedido-finalizado
-  AWS_SQS_QUEUE_PAGAMENTO_ERRO_PEDIDO_CANCELAR  = pagamento-erro-pedido-cancelar
-  AWS_SQS_QUEUE_PAGAMENTO_RECEBER_PEDIDO_PAGO   = pagamento-receber-pedido-pago
-  AWS_SQS_QUEUE_PAGAMENTO_GERAR_PAGAMENTO       = pagamento-gerar-pagamento
-  AWS_SQS_QUEUE_PAGAMENTO_ERRO_PAGAMENTO_PEDIDO = pagamento-erro-pagamento-pedido
+  AWS_SQS_QUEUE_PEDIDO_CRIADO                   = "pedido-criado"
+  AWS_SQS_QUEUE_PEDIDO_AGUARDANDO_PAGAMENTO     = "pedido-aguardando-pagamento"
+  AWS_SQS_QUEUE_PEDIDO_PAGO                     = "pedido-pago"
+  AWS_SQS_QUEUE_PEDIDO_RECEBIDO                 = "pedido-recebido"
+  AWS_SQS_QUEUE_PEDIDO_EM_PREPARO               = "pedido-em-preparo"
+  AWS_SQS_QUEUE_PEDIDO_PRONTO                   = "pedido-pronto"
+  AWS_SQS_QUEUE_PEDIDO_FINALIZADO               = "pedido-finalizado"
+  AWS_SQS_QUEUE_PEDIDO_CANCELADO                = "pedido-cancelado"
+  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_RECEBIDO    = "cozinha-erro-pedido-recebido"
+  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_EM_PREPARO  = "cozinha-erro-pedido-em-preparo"
+  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_PRONTO      = "cozinha-erro-pedido-pronto"
+  AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_FINALIZADO  = "cozinha-erro-pedido-finalizado"
+  AWS_SQS_QUEUE_PAGAMENTO_ERRO_PEDIDO_CANCELAR  = "pagamento-erro-pedido-cancelar"
+  AWS_SQS_QUEUE_PAGAMENTO_RECEBER_PEDIDO_PAGO   = "pagamento-receber-pedido-pago"
+  AWS_SQS_QUEUE_PAGAMENTO_GERAR_PAGAMENTO       = "pagamento-gerar-pagamento"
+  AWS_SQS_QUEUE_PAGAMENTO_ERRO_PAGAMENTO_PEDIDO = "pagamento-erro-pagamento-pedido"
 }
 
 
