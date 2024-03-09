@@ -50,7 +50,24 @@ resource "aws_ecs_task_definition" "fasteats" {
             "value" : var.containerMercadoPagoCredential
           },
           { "NAME" : "MERCADO_PAGO_USERID", "value" : var.containerMercadoPagoUderId },
-          { "NAME" : "MERCADO_PAGO_TIPO_PAGAMENTO", "value" : var.containerMercadoPagoTipoPagamento }
+          { "NAME" : "MERCADO_PAGO_TIPO_PAGAMENTO", "value" : var.containerMercadoPagoTipoPagamento },
+          { "NAME" : "AWS_SQS_ENDPOINT", "value" : "https://sqs.us-east-1.amazonaws.com/730335661438" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_CRIADO", "value" : "pedido-criado" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_AGUARDANDO_PAGAMENTO", "value" : "pedido-aguardando-pagamento" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_PAGO", "value" : "pedido-pago" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_RECEBIDO", "value" : "pedido-recebido" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_EM_PREPARO", "value" : "pedido-em-preparo" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_PRONTO", "value" : "pedido-pronto" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_FINALIZADO", "value" : "pedido-finalizado" },
+          { "NAME" : "AWS_SQS_QUEUE_PEDIDO_CANCELADO", "value" : "pedido-cancelado" },
+          { "NAME" : "AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_RECEBIDO", "value" : "cozinha-erro-pedido-recebido" },
+          { "NAME" : "AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_EM_PREPARO", "value" : "cozinha-erro-pedido-em-preparo" },
+          { "NAME" : "AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_PRONTO", "value" : "cozinha-erro-pedido-pronto" },
+          { "NAME" : "AWS_SQS_QUEUE_COZINHA_ERRO_PEDIDO_FINALIZADO", "value" : "cozinha-erro-pedido-finalizado" },
+          { "NAME" : "AWS_SQS_QUEUE_PAGAMENTO_ERRO_PEDIDO_CANCELAR", "value" : "pagamento-erro-pedido-cancelar" },
+          { "NAME" : "AWS_SQS_QUEUE_PAGAMENTO_RECEBER_PEDIDO_PAGO", "value" : "pagamento-receber-pedido-pago" },
+          { "NAME" : "AWS_SQS_QUEUE_PAGAMENTO_GERAR_PAGAMENTO", "value" : "pagamento-gerar-pagamento" },
+          { "NAME" : "AWS_SQS_QUEUE_PAGAMENTO_ERRO_PAGAMENTO_PEDIDO", "value" : "pagamento-erro-pagamento-pedido" }
         ]
         essential = true
         portMappings = [
