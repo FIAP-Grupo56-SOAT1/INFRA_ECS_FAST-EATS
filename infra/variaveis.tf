@@ -33,6 +33,10 @@ variable "secret_key" {
   type    = string
   default = ""
 }
+variable "session_token" {
+  type    = string
+  default = ""
+}
 
 variable "regiao" {
   type    = string
