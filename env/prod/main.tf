@@ -32,6 +32,8 @@ module "prod" {
   portaAplicacao                                = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["app_port"]
   url_pagamento_service                         = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["url_pagamento_service"]
   url_cozinha_service                           = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["url_cozinha_service"]
+  access_key                                    = jsondecode(data.aws_secretsmanager_secret_version.credentials_sts.secret_string)["access_key"]
+  secret_key                                    = jsondecode(data.aws_secretsmanager_secret_version.credentials_sts.secret_string)["secret_key"]
 }
 
 
@@ -42,6 +44,15 @@ data "aws_secretsmanager_secret" "secrets_microservico" {
 
 data "aws_secretsmanager_secret_version" "credentials" {
   secret_id = data.aws_secretsmanager_secret.secrets_microservico.id
+}
+
+#obteando dados do secret manager
+data "aws_secretsmanager_secret" "secrets_sts" {
+  name = "prod/soat1grupo56/Sts"
+}
+
+data "aws_secretsmanager_secret_version" "credentials_sts" {
+  secret_id = data.aws_secretsmanager_secret.secrets_sts.id
 }
 
 

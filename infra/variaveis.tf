@@ -24,6 +24,16 @@ variable "imagemDocker" {
 
 ##### fim variaveis de ambiente repositorio de imagens docker#######
 
+variable "access_key" {
+  type    = string
+  default = ""
+}
+
+variable "secret_key" {
+  type    = string
+  default = ""
+}
+
 variable "regiao" {
   type    = string
   default = "us-east-1"
