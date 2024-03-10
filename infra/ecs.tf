@@ -70,6 +70,7 @@ resource "aws_ecs_task_definition" "fasteats" {
           { "NAME" : "AWS_SQS_QUEUE_PAGAMENTO_ERRO_PAGAMENTO_PEDIDO", "value" : "pagamento-erro-pagamento-pedido" },
           { "NAME" : "AWS_ACCESS_KEY", "value" : var.access_key },
           { "NAME" : "AWS_SECRET_KEY", "value" : var.secret_key },
+          { "NAME" : "AWS_SESSION_TOKEN", "value" : var.session_token },
           { "NAME" : "AWS_REGION", "value" : var.regiao }
         ]
         essential = true
