@@ -167,10 +167,10 @@ resource "aws_lb_target_group" "target_group_fasteats" {
   health_check {
     path                = "/actuator/health"
     port                = var.portaAplicacao
-    healthy_threshold   = 5
-    unhealthy_threshold = 2
-    timeout             = 5
-    interval            = 50
+    healthy_threshold   = 5 # O número de verificações de integridade bem-sucedidas consecutivas necessárias antes de considerar um destino não íntegro como íntegro.
+    unhealthy_threshold = 3 # O número de verificações de integridade consecutivas com falha exigido antes considerar um destino como não íntegro.
+    timeout             = 5 # O tempo, em segundos, durante o qual a ausência de resposta significa uma falha na verificação de integridade.
+    interval            = 60
     matcher             = "200" # has to be HTTP 200 or fails
   }
 }
