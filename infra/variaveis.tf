@@ -26,16 +26,13 @@ variable "imagemDocker" {
 
 variable "access_key" {
   type    = string
-  default = ""
 }
 
 variable "secret_key" {
   type    = string
-  default = ""
 }
 variable "session_token" {
   type    = string
-  default = ""
 }
 
 variable "regiao" {
