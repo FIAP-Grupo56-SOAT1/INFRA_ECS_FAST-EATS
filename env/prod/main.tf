@@ -35,6 +35,7 @@ module "prod" {
   access_key                                    = jsondecode(data.aws_secretsmanager_secret_version.credentials_sts.secret_string)["access_key"]
   secret_key                                    = jsondecode(data.aws_secretsmanager_secret_version.credentials_sts.secret_string)["secret_key"]
   session_token                                 = jsondecode(data.aws_secretsmanager_secret_version.credentials_sts.secret_string)["session_token"]
+  encryption_key                                 = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["encryption_key"]
 }
 
 
