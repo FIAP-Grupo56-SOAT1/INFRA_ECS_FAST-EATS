@@ -22,6 +22,12 @@ variable "imagemDocker" {
   default = "730335661438.dkr.ecr.us-east-1.amazonaws.com/microserviceo-pedido:latest"
 }
 
+variable "encryption_key" {
+  type    = string
+  default = "D3CB53F3-5D90-445A-85EC-BE30954708D2"
+}
+
+
 ##### fim variaveis de ambiente repositorio de imagens docker#######
 
 variable "access_key" {
